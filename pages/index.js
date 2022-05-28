@@ -11,10 +11,13 @@ export default function Home() {
     <>
       <Header />
 
-      <h1 style={{color:'orangered',marginTop:'150px',textAlign:'center',display:'block'}}>10000+ Food Recepies!</h1>
+      <h1 style={{color:'orangered',marginTop:'140px',marginBottom:'30px',textAlign:'center',display:'block',opacity:0.7}}>Food Recepies On Your Hand!</h1>
+      
+      <h4 style={{textAlign:'center',maxWidth:'700px',margin:'auto',zIndex:1,fontWeight:'normal',lineHeight:'1.4rem',opacity:0.8}}>More than 13000 food recepies details. Powered by Artificial intelligence for recommending you the best recepies according to your interest </h4>
 
-      <div style={{ marginTop: '20px',display:'flex',justifyContent:'center',width:'100vw'}}>
-      <img src="https://i.pinimg.com/originals/a6/38/e6/a638e6e85f9d56f515760c0d63d24f5c.png" style={{backgroundSize:'cover',backgroundPosition:'center',margin:'auto',width:'100%'}} />
+      <div style={{ marginTop: '5px',display:'flex',justifyContent:'center',width:'100vw'}}>
+      <img src="https://i.pinimg.com/originals/a6/38/e6/a638e6e85f9d56f515760c0d63d24f5c.png"  className={styles.home_img} />
+
       </div>
     </>
   )

@@ -75,7 +75,7 @@ export default function Header() {
                        
                         <div style={{ width: '100%', marginTop: '130px' }}>
 
-                            <Close onClick={handleClick} style={{ position: 'relative', left: '90%', background: 'blueviolet', borderRadius: '50%', boxShadow: '1px 10px 17px -10px rgba(0,0,0,0.08)', padding: '10px', color: 'white', fontSize: '2.1rem', cursor: 'pointer' }} />
+                            <Close onClick={handleClick} style={{ position: 'relative', left: '90%', background: 'green', borderRadius: '50%', boxShadow: '1px 10px 17px -10px rgba(0,0,0,0.08)', padding: '10px', color: 'white', fontSize: '2.1rem', cursor: 'pointer' }} />
                         </div>
                     </div> : null}
 

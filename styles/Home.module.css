@@ -3,8 +3,27 @@
   -webkit-animation: navbar 1s  infinite ease-in-out;
   animation: navbar 1s alternate  ease-in-out;
 height: 50px;
-background: rgba(255, 255, 255, 0.849);
+background: rgba(255, 255, 255, 0.776);
 backdrop-filter: blur(3px);
+}
+
+.home_img{
+  background-size:contain;
+  background-position:center;
+  margin:auto;
+  max-width:900px;
+  height: auto;
+  background-repeat:no-repeat;
+  animation:updown 1s ease-in-out;
+}
+
+@keyframes updown {
+  0%{
+    transform: translateY(50px);
+  }
+  100%{
+    transform:translateY(0px)
+  }
 }
 
 @keyframes navbar {
@@ -122,6 +141,14 @@ backdrop-filter: blur(3px);
       animation-fill-mode: both;
       -webkit-animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
       animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .home_img{
+      background-size:contain;
+      background-position:center;
+      margin:auto;
+      width:100%;
+      background-repeat:no-repeat;
     }
     }
     
