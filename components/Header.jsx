@@ -79,7 +79,7 @@ export default function Header() {
                         </div>
                     </div> : null}
 
-                    {width > 550 ? <button onClick={() => window.location.href = '/favourite'} className={router.pathname == '/favourite' ? styles.red_active : styles.nav_links}  style={{marginTop:'15px',borderRadius:"15px",border:'none'}}><FavoriteIcon/></button> : null}
+                    {width > 550 ? <button onClick={() => window.location.href = '/favourite'} className={router.pathname == '/favourite' ? styles.red_active : styles.nav_links}  style={{marginTop:'15px',borderRadius:"15px",border:'none',background:'white'}}><FavoriteIcon/></button> : null}
 
                     {width < 550 ? <div onClick={handleClick}><Menu style={{cursor: 'pointer' }} /></div> : null}
                 </div>
