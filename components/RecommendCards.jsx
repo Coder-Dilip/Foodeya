@@ -1,32 +1,16 @@
-import { getServerSideProps } from "../pages"
 
-
-function RecommendCards({data}) {
-    // let {Title,Cleaned_Ingredients,id,recommended_to,Image_Name,Instructions}=data
-    console.log(data)
+function RecommendCards({id,title,ingredients,image,instructions}) {
+  console.log(id,title,ingredients,image,instructions)
   return (
-    <div>helo</div>
+      <>
+    <div>{title}</div>
+    <p>{ingredients}</p>
+    <p>{instructions}</p>
+    
+    <img src={`https://dilipbackend.xyz/public/storage/recommend/food/${image}.jpg`}></img>
+    </>
   )
 }
 
 export default RecommendCards
 
-
-
-export async function getStaticProps(id){
-    console.log(data)
-    const key = process.env.API_KEY
-  let formdata = new FormData()
-  formdata.append("id", id)
-  formdata.append("key", process.env.API_KEY) 
-  let result = await fetch("https://dilipbackend.xyz/api/recommend", {
-    method: "POST",
-    body: formdata
-  })
-  result = await result.json()
-  return {
-    props:{
-      data:result[0]
-    }
-  }
-}

@@ -1,47 +1,24 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
+import Link from 'next/link'
+import Header from '../components/Header'
 
 import styles from '../styles/Home.module.css'
-import RecommendCard from "../components/RecommendCards";
 
-export default function Home({data}) {
-let {Title,Cleaned_Ingredients,id,recommended_to,Image_Name,Instructions}=data
-
-let ids=recommended_to.split(",").map(el=>Number(el))
+export default function Home() {
   return (
     <>
-    <h1>{Title}</h1>
-    <img src="https://dilipbackend.xyz/public/storage/recommend/food/-burnt-carrots-and-parsnips-56390131.jpg"></img>
-   
-   {ids.map((id,index)=>(
-     <>
-     <RecommendCard 
-     id={id}
-     />
-     </>
-   ))}
+      <Header />
 
+      <h1 style={{color:'orangered',marginTop:'150px',textAlign:'center',display:'block'}}>10000+ Food Recepies!</h1>
 
+      <div style={{ marginTop: '20px',display:'flex',justifyContent:'center',width:'100vw',border:'2px solid black'}}>
+      <img src="https://i.pinimg.com/originals/a6/38/e6/a638e6e85f9d56f515760c0d63d24f5c.png" style={{backgroundSize:'cover',backgroundPosition:'center',margin:'auto'}} />
+      </div>
     </>
   )
 }
 
 
-export async function getServerSideProps() {
-  const key = process.env.API_KEY
-  let formdata = new FormData()
-  formdata.append("id", 0)
-  formdata.append("key", process.env.API_KEY)
-  let result = await fetch("https://dilipbackend.xyz/api/recommend", {
-    method: "POST",
-    body: formdata
-  })
-  result = await result.json()
-  return {
-    props:{
-      data:result[0]
-    }
-  }
-}
 
