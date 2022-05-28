@@ -20,12 +20,12 @@ export default function Header() {
         setpathname(splitted[splitted.length - 1])
     }, [])
 
-    // setInterval(() => {
-    //     if (process.browser) {
-    //         setwidth(window.innerWidth)
+    setInterval(() => {
+        if (process.browser) {
+            setwidth(window.innerWidth)
 
-    //     }
-    // }, 200);
+        }
+    }, 200);
 
     function handleClick() {
         let pathnames = window.location.href
@@ -81,7 +81,7 @@ export default function Header() {
 
                     {width > 550 ? <button onClick={() => window.location.href = '/favourite'} className={router.pathname == '/favourite' ? styles.red_active : styles.nav_links}  style={{marginTop:'15px',borderRadius:"15px",border:'none'}}><FavoriteIcon/></button> : null}
 
-                    {width < 550 ? <div onClick={handleClick}><Menu style={{ color: color, cursor: 'pointer' }} /></div> : null}
+                    {width < 550 ? <div onClick={handleClick}><Menu style={{cursor: 'pointer' }} /></div> : null}
                 </div>
             </nav>
             <div style={{ marginBottom: '40px' }}></div>
