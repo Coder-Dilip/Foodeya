@@ -1,26 +1,20 @@
 import styles from "../styles/Home.module.css";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide} from "swiper/react";
+import {FreeMode, Pagination} from 'swiper'
 
 // Import Swiper styles
 import "swiper/css";
 
-function LandingProduct() {
-  const Product = ({ title, id, image }) => {
-    return (
-        <SwiperSlide>
-          <div>
-            <h2>Chicken</h2>
-            <h5>{title}</h5>
-            <img
-              src={`https://dilipbackend.xyz/public/storage/recommend/food/${image}.jpg`}
-              alt=""
-              
-            />
-          </div>
-        </SwiperSlide>
-    );
-  };
+import {useState,useEffect} from 'react'
 
+function LandingProduct() {
+  const [width, setwidth] = useState(0)
+
+  useEffect(() => {
+  setwidth(window.innerWidth)
+  console.log(window.innerWidth)
+  }, [])
+  
   const products = [
     [
       "miso-butter roast chicken with acorn squash panzan",
@@ -79,12 +73,17 @@ function LandingProduct() {
             className={styles.productSliderSide}
             style={{ marginTop: "20px" }}
           >
-            <Swiper  slidesPerView={1.5} >
+            <Swiper  
+            slidesPerView={width<1400?width<500?1.2:1.5:2.2}
+            freeMode={true}
+            modules={[FreeMode,Pagination]}
+            loop={true}
+            >
               {/* mobile ko lagi simple card banauni slider hatayera */}
 
               <SwiperSlide>
-          <div>
-            <h2>Chicken</h2>
+          <div className={styles.productScroll}>
+            <h2>Roast Chicken</h2>
             <h5>{products[0][0]}</h5>
             <img
               src={`https://dilipbackend.xyz/public/storage/recommend/food/${products[0][2]}.jpg`}
@@ -95,8 +94,8 @@ function LandingProduct() {
         </SwiperSlide>
 
               <SwiperSlide>
-          <div>
-            <h2>Chicken</h2>
+          <div className={styles.productScroll}>
+            <h2>Falafels</h2>
             <h5>{products[1][0]}</h5>
             <img
               src={`https://dilipbackend.xyz/public/storage/recommend/food/${products[1][2]}.jpg`}
@@ -108,8 +107,8 @@ function LandingProduct() {
         </SwiperSlide>
 
               <SwiperSlide>
-          <div>
-            <h2>Chicken</h2>
+          <div className={styles.productScroll}>
+            <h2>Chestnut Mix</h2>
             <h5>{products[2][0]}</h5>
             <img
               src={`https://dilipbackend.xyz/public/storage/recommend/food/${products[2][2]}.jpg`}
@@ -120,8 +119,8 @@ function LandingProduct() {
           
         </SwiperSlide>
               <SwiperSlide>
-          <div>
-            <h2>Chicken</h2>
+          <div className={styles.productScroll}>
+            <h2>Cornmeal</h2>
             <h5>{products[3][0]}</h5>
             <img
               src={`https://dilipbackend.xyz/public/storage/recommend/food/${products[3][2]}.jpg`}
@@ -132,8 +131,8 @@ function LandingProduct() {
           
         </SwiperSlide>
               <SwiperSlide>
-          <div>
-            <h2>Chicken</h2>
+          <div className={styles.productScroll}>
+            <h2>Grilled Shrimp</h2>
             <h5>{products[4][0]}</h5>
             <img
               src={`https://dilipbackend.xyz/public/storage/recommend/food/${products[4][2]}.jpg`}
@@ -144,8 +143,8 @@ function LandingProduct() {
           
         </SwiperSlide>
               <SwiperSlide>
-          <div>
-            <h2>Chicken</h2>
+          <div className={styles.productScroll}>
+            <h2>sloppy joe</h2>
             <h5>{products[5][0]}</h5>
             <img
               src={`https://dilipbackend.xyz/public/storage/recommend/food/${products[5][2]}.jpg`}

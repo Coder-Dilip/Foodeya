@@ -498,7 +498,7 @@
 
 .productSliderSide {
   max-width: 50vw;
-  border: 2px solid black;
+ 
 }
 
 
@@ -522,4 +522,21 @@
   .productText {
     font-size: 1.1rem;
   }
+}
+
+.productScroll{
+  background: rgb(255, 238, 215);
+  margin: 40px;
+  width: 350px;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.productScroll>h5{
+  font-weight: normal;
+  max-width: 250px;
+}
+
+.productScroll>img{
+  border-radius: 10px;
 }
