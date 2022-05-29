@@ -50,7 +50,7 @@ function LandingProduct() {
 
   return (
     <>
-      <div style={{ maxWidth: "1100px", width: "90vw", margin: "auto" }}>
+      <div style={{ maxWidth: "1100px", width: "90vw", margin: "auto",marginBottom:'100px' }}>
         <div
           style={{
             width: "100%",
@@ -66,7 +66,7 @@ function LandingProduct() {
               className={styles.productText}
               style={{ maxWidth: "320px", color: "green", opacity: 0.6 }}
             >
-              Our Best Recepie For your Amazing Taste 😋
+              Our Best Recipe For your Amazing Taste 😋
             </h1>
           </div>
           <div
@@ -88,7 +88,6 @@ function LandingProduct() {
             <img
               src={`https://dilipbackend.xyz/public/storage/recommend/food/${products[0][2]}.jpg`}
               alt=""
-              
             />
           </div>
         </SwiperSlide>
@@ -160,7 +159,7 @@ function LandingProduct() {
           </div>
           <div style={{display:width<512?'block':'none',marginTop:'50px',width:'90vw',boxShadow: '0px 2px 9px 0px rgba(0,0,1,0.20)',justifyContent:'space-between',alignItems:'center',background:'white',borderRadius:'17px'}}>
           <img style={{width:'90vw',height:'auto',borderRadius:'10px'}} src={`https://dilipbackend.xyz/public/storage/recommend/food/sloppy-joe-shirred-eggs-with-spinach-vivian-howard.jpg`} />
-          <div>
+          <div style={{padding:'20px'}}>
             <h5 style={{color:'orangered'}}>Delicious</h5>
             <h3>Sloppy Joe</h3>
             <p>sloppy joe shirred eggs with spinach</p>
