@@ -6,11 +6,9 @@ import styles from '../styles/Home.module.css'
 import RecommendCards from '../components/RecommendCards';
 
 export default function Food({ data }) {
-  // let {Title,Cleaned_Ingredients,id,recommended_to,Image_Name,Instructions}=data
   let parentData = data[0][0]
   return (
     <>
-      {/* <h1>{Title}</h1> */}
       <img src={`https://dilipbackend.xyz/public/storage/recommend/food/${parentData.Image_Name}.jpg`}></img>
 
       {data.splice(1, data.length).map((element, index) => (
@@ -25,8 +23,6 @@ export default function Food({ data }) {
           />
         </>
       ))}
-
-
     </>
   )
 }

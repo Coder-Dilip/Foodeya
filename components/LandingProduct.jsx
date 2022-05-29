@@ -71,7 +71,7 @@ function LandingProduct() {
           </div>
           <div
             className={styles.productSliderSide}
-            style={{ marginTop: "20px" }}
+            style={{ marginTop: "20px",display:width<512?"none":'block' }}
           >
             <Swiper  
             slidesPerView={width<1400?width<500?1.2:1.5:2.2}
@@ -157,6 +157,15 @@ function LandingProduct() {
        
               
             </Swiper>
+          </div>
+          <div style={{display:width<512?'block':'none',marginTop:'50px',width:'90vw',boxShadow: '0px 2px 9px 0px rgba(0,0,1,0.32)',justifyContent:'space-between',alignItems:'center',background:'white',padding:'30px',borderRadius:'17px'}}>
+          <img style={{width:'90%',height:'auto'}} src={`https://dilipbackend.xyz/public/storage/recommend/food/sloppy-joe-shirred-eggs-with-spinach-vivian-howard.jpg`} />
+          <div>
+            <h5 style={{color:'orangered'}}>Delicious</h5>
+            <h3>Sloppy Joe</h3>
+            <p>sloppy joe shirred eggs with spinach</p>
+            <button style={{background:'#febe15',padding:'15px',border:'none',borderRadius:'5px',color:'white',fontWeight:'bolder'}}>I am Hungry</button>
+          </div>
           </div>
         </div>
       </div>
