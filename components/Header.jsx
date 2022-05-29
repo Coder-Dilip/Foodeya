@@ -49,7 +49,7 @@ export default function Header() {
         <>
             <nav className={styles.nav} style={{
                 width: '100%', margin: 'auto', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '1px 10px 17px -10px rgba(0,0,0,0.08)',
-                padding: '0 20px', position: 'fixed', top: 0, zIndex: 1000,marginTop:'20px'
+                padding: '0 20px', position: 'fixed', top: 0, zIndex: 1000,marginTop:'15px'
             }}>
                 <div style={{
                     display: 'flex', width: '100%', margin: 'auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between',
