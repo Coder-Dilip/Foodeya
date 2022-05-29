@@ -14,7 +14,7 @@ function LandingProduct() {
             <img
               src={`https://dilipbackend.xyz/public/storage/recommend/food/${image}.jpg`}
               alt=""
-              srcset=""
+              
             />
           </div>
         </SwiperSlide>
@@ -89,7 +89,7 @@ function LandingProduct() {
             <img
               src={`https://dilipbackend.xyz/public/storage/recommend/food/${products[0][2]}.jpg`}
               alt=""
-              srcset=""
+              
             />
           </div>
         </SwiperSlide>
@@ -101,7 +101,7 @@ function LandingProduct() {
             <img
               src={`https://dilipbackend.xyz/public/storage/recommend/food/${products[1][2]}.jpg`}
               alt=""
-              srcset=""
+              
             />
           </div>
           
@@ -114,7 +114,7 @@ function LandingProduct() {
             <img
               src={`https://dilipbackend.xyz/public/storage/recommend/food/${products[2][2]}.jpg`}
               alt=""
-              srcset=""
+              
             />
           </div>
           
@@ -126,7 +126,7 @@ function LandingProduct() {
             <img
               src={`https://dilipbackend.xyz/public/storage/recommend/food/${products[3][2]}.jpg`}
               alt=""
-              srcset=""
+              
             />
           </div>
           
@@ -138,7 +138,7 @@ function LandingProduct() {
             <img
               src={`https://dilipbackend.xyz/public/storage/recommend/food/${products[4][2]}.jpg`}
               alt=""
-              srcset=""
+              
             />
           </div>
           
@@ -150,7 +150,7 @@ function LandingProduct() {
             <img
               src={`https://dilipbackend.xyz/public/storage/recommend/food/${products[5][2]}.jpg`}
               alt=""
-              srcset=""
+              
             />
           </div>
           
