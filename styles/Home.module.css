@@ -530,6 +530,12 @@
   width: 350px;
   padding: 30px;
   border-radius: 10px;
+  transition: .3s;
+}
+
+.productScroll:hover{
+  transition: .3s;
+  transform: scale(1.1);
 }
 
 .productScroll>h5{

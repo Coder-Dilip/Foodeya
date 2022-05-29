@@ -158,8 +158,8 @@ function LandingProduct() {
               
             </Swiper>
           </div>
-          <div style={{display:width<512?'block':'none',marginTop:'50px',width:'90vw',boxShadow: '0px 2px 9px 0px rgba(0,0,1,0.32)',justifyContent:'space-between',alignItems:'center',background:'white',padding:'30px',borderRadius:'17px'}}>
-          <img style={{width:'90%',height:'auto'}} src={`https://dilipbackend.xyz/public/storage/recommend/food/sloppy-joe-shirred-eggs-with-spinach-vivian-howard.jpg`} />
+          <div style={{display:width<512?'block':'none',marginTop:'50px',width:'90vw',boxShadow: '0px 2px 9px 0px rgba(0,0,1,0.20)',justifyContent:'space-between',alignItems:'center',background:'white',borderRadius:'17px'}}>
+          <img style={{width:'90vw',height:'auto',borderRadius:'10px'}} src={`https://dilipbackend.xyz/public/storage/recommend/food/sloppy-joe-shirred-eggs-with-spinach-vivian-howard.jpg`} />
           <div>
             <h5 style={{color:'orangered'}}>Delicious</h5>
             <h3>Sloppy Joe</h3>
