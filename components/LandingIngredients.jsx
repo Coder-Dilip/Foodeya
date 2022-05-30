@@ -34,7 +34,7 @@ function LandingIngredients({width}) {
           <p style={{opacity:0.6}}>Delicious Recipes</p>
           <h1 style={{marginBottom:'100px', maxWidth:'450px',marginTop:'40px'}}>Detailed Mouth Watering <span style={{color:'orangered',textDecoration:'underline'}}>Recipes</span></h1>
           <Fade bottom>
-          <img src="/easy.webp" alt="" />
+          <img src="/easy.webp" style={{marginBottom:'30px',maxWidth:'90vw'}} alt="" />
           </Fade>
         </div>
         <Fade top>
