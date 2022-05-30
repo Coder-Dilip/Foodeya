@@ -50,7 +50,7 @@ function LandingProduct() {
 
   return (
     <>
-      <div style={{ maxWidth: "1100px", width: "90vw", margin: "auto",marginBottom:'100px' }}>
+      <div style={{ maxWidth: "1100px", width: "90vw", margin: "auto",marginBottom:'140px' }}>
         <div
           style={{
             width: "100%",
