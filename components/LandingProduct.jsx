@@ -1,6 +1,8 @@
 import styles from "../styles/Home.module.css";
 import { Swiper, SwiperSlide} from "swiper/react";
 import {FreeMode, Pagination} from 'swiper'
+import Fade from 'react-reveal/Fade';
+
 
 // Import Swiper styles
 import "swiper/css";
@@ -69,6 +71,7 @@ function LandingProduct() {
               Our Best Recipe For your Amazing Taste 😋
             </h1>
           </div>
+          <Fade right>
           <div
             className={styles.productSliderSide}
             style={{ marginTop: "20px",display:width<512?"none":'block' }}
@@ -157,6 +160,7 @@ function LandingProduct() {
               
             </Swiper>
           </div>
+          </Fade>
           <div style={{display:width<512?'block':'none',marginTop:'50px',width:'90vw',boxShadow: '0px 2px 9px 0px rgba(0,0,1,0.20)',justifyContent:'space-between',alignItems:'center',background:'white',borderRadius:'17px'}}>
           <img style={{width:'90vw',height:'auto',borderRadius:'10px'}} src={`https://dilipbackend.xyz/public/storage/recommend/food/sloppy-joe-shirred-eggs-with-spinach-vivian-howard.jpg`} />
           <div style={{padding:'20px'}}>
