@@ -227,7 +227,8 @@ function LandingIngredients({ width }) {
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
-            marginTop:"170px"
+            marginTop:"170px",
+            flexWrap:'wrap'
           }}
         >
           <div>
