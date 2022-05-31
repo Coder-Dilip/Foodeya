@@ -1,11 +1,11 @@
 import { useState } from "react";
 import Fade from "react-reveal/Fade";
-import styles from '../styles/Home.module.css'
+import styles from "../styles/Home.module.css"
 function LandingIngredients({ width }) {
   const [Email, setEmail] = useState("");
   console.log(width);
   return (
-    <div style={{ maxWidth: "1100px", width: "90vw", margin: "auto",marginBottom:'150px' }}>
+    <div style={{ maxWidth: "1100px", width: "90vw", margin: "auto",marginBottom:"150px" }}>
       <div
         style={{
           display: "flex",
@@ -190,16 +190,16 @@ function LandingIngredients({ width }) {
       >
         <img
           src="https://cdn.dribbble.com/users/1012997/screenshots/14073001/media/4994fedc83e967607f1e3b3e17525831.png?compress=1&resize=400x300"
-          style={{ borderRadius: "10px",maxWidth:'90vw' }}
+          style={{ borderRadius: "10px",maxWidth:"90vw" }}
           alt=""
         />
         <div>
           <h5 style={{  fontWeight: "bolder" }}>
-            Get <span style={{color:'orange'}}>Notified</span>
+            Get <span style={{color:"orange"}}>Notified</span>
           </h5>
-          <h2 style={{marginTop:'-10px'}}>Our Newsletter</h2>
-          <div style={{display:'flex',alignItems:'center'}}>
-            <p style={{color:'white',backgroundColor:'orange',padding:'10px 15px',fontWeight:'bold'}}>@</p>
+          <h2 style={{marginTop:"-10px"}}>Our Newsletter</h2>
+          <div style={{display:"flex",alignItems:"center"}}>
+            <p style={{color:"white",backgroundColor:"orange",padding:"10px 15px",fontWeight:"bold"}}>@</p>
           <input
             type="text"
             placeholder="Email..."
@@ -207,7 +207,7 @@ function LandingIngredients({ width }) {
             onChange={(e) => {
               setEmail(e.target.value);
             }}
-            style={{padding:'12px 25px',outline:'none',border:'none',background:'#ebebeb',borderRadius:'10px',borderTopLeftRadius:'0px',borderBottomLeftRadius:'0px'}}
+            style={{padding:"12px 25px",outline:"none",border:"none",background:"#ebebeb",borderRadius:"10px",borderTopLeftRadius:"0px",borderBottomLeftRadius:"0px"}}
           />
           </div>
           <button style={{
@@ -218,7 +218,7 @@ function LandingIngredients({ width }) {
                 border: "none",
                 color: "white",
                 background: "orange",
-                fontWeight:'bold',
+                fontWeight:"bold",
               }}>Subscribe</button>
         </div>
       </div>
@@ -227,20 +227,20 @@ function LandingIngredients({ width }) {
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
-            marginTop:'170px'
+            marginTop:"170px"
           }}
         >
           <div>
          <h1>Recipes Testimonial</h1> 
-         <p style={{width:'90vw',maxWidth:'450px',textAlign:'justify',opacity:0.7,marginTop:'15px'}}>We regularly get reviews from our subscribers and visitors. Majority of them are positive and we also get constructive critisicm which help us to improve the way of sharing the recipes instructions with you.</p>
-         <img src="https://www.neptos.io:3000/public/uploads/vendor/images/vimage-1587354927615.jpg" style={{height:'50px',width:'50px',borderRadius:'50px',marginTop:'20px'}} alt="" />
-         <p style={{maxWidth:'450px',fontSize:'0.9rem',opacity:0.7}}>Recipes are really good in amount and also easy to follow the instructions. Great site for making delicious meal 👍</p>
+         <p style={{width:"90vw",maxWidth:"450px",textAlign:"justify",opacity:0.7,marginTop:"15px"}}>We regularly get reviews from our subscribers and visitors. Majority of them are positive and we also get constructive critisicm which help us to improve the way of sharing the recipes instructions with you.</p>
+         <img src="https://www.neptos.io:3000/public/uploads/vendor/images/vimage-1587354927615.jpg" style={{height:"50px",width:"50px",borderRadius:"50px",marginTop:"20px"}} alt="" />
+         <p style={{maxWidth:"450px",fontSize:"0.9rem",opacity:0.7}}>Recipes are really good in amount and also easy to follow the instructions. Great site for making delicious meal 👍</p>
          <h5>Dilip Pokhrel ⭐ ⭐ ⭐ ⭐ ⭐</h5>
           </div>
-          <img src="https://st2.depositphotos.com/3889193/7085/i/450/depositphotos_70859787-stock-photo-healthy-fresh-homemade-salad.jpg" style={{borderRadius:'15px',marginRight:'10px',width:'90vw',maxWidth:'500px',height:'auto'}} alt="" />
+          <img src="https://st2.depositphotos.com/3889193/7085/i/450/depositphotos_70859787-stock-photo-healthy-fresh-homemade-salad.jpg" style={{borderRadius:"15px",marginRight:"10px",width:"90vw",maxWidth:"500px",height:"auto"}} alt="" />
         </div>
 
-        <img src="/plate.png" style={{width:width>600?'60vw':'90vw',margin:'auto',marginTop:'180px',display:'block'}} alt="" />
+        <img src="/plate.png" style={{width:width>600?"60vw":"90vw",margin:"auto",marginTop:"180px",display:"block"}} alt="" />
         <Fade up>
         <button style={{ padding: "20px 35px",
                 borderRadius: "7px",
@@ -249,7 +249,7 @@ function LandingIngredients({ width }) {
                 border: "none",
                 color: "white",
                 background: "orange",
-                fontWeight:'bold',margin:'auto',display:'block',marginTop: "90px",borderBottomRightRadius:'50px'}}>Let's Explore</button>
+                fontWeight:"bold",margin:"auto",display:"block",marginTop: "90px",borderBottomRightRadius:"50px"}}>Let"s Explore</button>
         </Fade>
     </div>
   );
