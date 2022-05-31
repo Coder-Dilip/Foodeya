@@ -222,6 +222,35 @@ function LandingIngredients({ width }) {
               }}>Subscribe</button>
         </div>
       </div>
+      <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            marginTop:'170px'
+          }}
+        >
+          <div>
+         <h1>Recipes Testimonial</h1> 
+         <p style={{width:'90vw',maxWidth:'450px',textAlign:'justify',opacity:0.7,marginTop:'15px'}}>We regularly get reviews from our subscribers and visitors. Majority of them are positive and we also get constructive critisicm which help us to improve the way of sharing the recipes instructions with you.</p>
+         <img src="https://www.neptos.io:3000/public/uploads/vendor/images/vimage-1587354927615.jpg" style={{height:'50px',width:'50px',borderRadius:'50px',marginTop:'20px'}} alt="" />
+         <p style={{maxWidth:'450px',fontSize:'0.9rem',opacity:0.7}}>Recipes are really good in amount and also easy to follow the instructions. Great site for making delicious meal 👍</p>
+         <h5>Dilip Pokhrel ⭐ ⭐ ⭐ ⭐ ⭐</h5>
+          </div>
+          <img src="https://st2.depositphotos.com/3889193/7085/i/450/depositphotos_70859787-stock-photo-healthy-fresh-homemade-salad.jpg" style={{borderRadius:'15px',marginRight:'10px',width:'90vw',maxWidth:'500px',height:'auto'}} alt="" />
+        </div>
+
+        <img src="/plate.png" style={{width:width>600?'60vw':'90vw',margin:'auto',marginTop:'180px',display:'block'}} alt="" />
+        <Fade up>
+        <button style={{ padding: "20px 35px",
+                borderRadius: "7px",
+                
+                cursor: "pointer",
+                border: "none",
+                color: "white",
+                background: "orange",
+                fontWeight:'bold',margin:'auto',display:'block',marginTop: "90px",borderBottomRightRadius:'50px'}}>Let's Explore</button>
+        </Fade>
     </div>
   );
 }
