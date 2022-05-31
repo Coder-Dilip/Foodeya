@@ -228,7 +228,7 @@ function LandingIngredients({ width }) {
             alignItems: "center",
             justifyContent: "space-between",
             marginTop:"170px",
-            flexWrap:'wrap'
+            flexWrap:width>550?'wrap':'wrap-reverse'
           }}
         >
           <div>
@@ -250,7 +250,7 @@ function LandingIngredients({ width }) {
                 border: "none",
                 color: "white",
                 background: "orange",
-                fontWeight:"bold",margin:"auto",display:"block",marginTop: "90px",borderBottomRightRadius:"50px"}}>Let"s Explore</button>
+                fontWeight:"bold",margin:"auto",display:"block",marginTop: "90px",borderBottomRightRadius:"50px"}}>Let's Explore</button>
         </Fade>
     </div>
   );

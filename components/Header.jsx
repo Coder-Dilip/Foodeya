@@ -60,14 +60,18 @@ export default function Header() {
                     </div></Link>
 
                     {width > 550 ? <div style={{ width: '60%', display: 'flex', alignItems: 'center', justifyContent: 'space-evenly', maxWidth: '500px', fontWeight: 'bold',marginTop:'15px' }}>
-                        <Link href='/products'><p className={pathname == '/products' ? styles.active : styles.nav_links} style={{ cursor: 'pointer' }}>Products</p></Link>
+
+                        <Link href='/'><p className={pathname == '/' ? styles.active : styles.nav_links} style={{ cursor: 'pointer' }}>Home</p></Link>
+                        <Link href='/recipe'><p className={pathname == '/recipe' ? styles.active : styles.nav_links} style={{ cursor: 'pointer' }}>Recipe</p></Link>
                         <Link href='/about'><p className={router.pathname == '/about' ? styles.active : styles.nav_links}>About</p></Link>
                        
                         <Link href='/Blog'><p className={router.pathname == '/Blog' ? styles.active : styles.nav_links}>Blog</p></Link>
                     </div> : null}
 
                     {width < 550 && clicked ? <div style={{ width: '100vw', display: 'flex', alignItems: 'center', justifyContent: 'flex-start', maxWidth: '500px', fontWeight: 'bold', flexDirection: 'column', transition: '.3s', position: 'absolute', top: top, alignItems: 'flex-start', borderRadius: '10px', padding: '30px 20px', background: "rgba(255, 255, 255, 0.989)", height: '100vh', left: '1px', opacity: opacity }} className={styles.responsive_container}>
-                        <Link href='/product' ><p onClick={handleClick} className={pathname == '/product' ? styles.active : styles.nav_links} style={{ fontSize: '1.5rem', marginBottom: '5px', cursor: 'pointer' }}>Product</p></Link>
+                    
+                        <Link href='/' ><p onClick={handleClick} className={pathname == '/' ? styles.active : styles.nav_links} style={{ fontSize: '1.5rem', marginBottom: '5px', cursor: 'pointer' }}>Home</p></Link>
+                        <Link href='/recipe' ><p onClick={handleClick} className={pathname == '/recipe' ? styles.active : styles.nav_links} style={{ fontSize: '1.5rem', marginBottom: '5px', cursor: 'pointer' }}>Recipe</p></Link>
                         <Link href='/blog'><p onClick={handleClick} className={router.pathname == '/contact' ? styles.active : styles.nav_links} style={{ fontSize: '1.5rem', marginBottom: '5px' }}>Blog</p></Link>
                         <Link href='/about'><p onClick={handleClick} className={router.pathname == '/about' ? styles.active : styles.nav_links} style={{ fontSize: '1.5rem', marginBottom: '5px' }}>About</p></Link>
                     

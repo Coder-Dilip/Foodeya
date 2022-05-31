@@ -6,6 +6,7 @@ import Header from '../components/Header'
 import LandingProduct from '../components/LandingProduct'
 import LandingIngredients from '../components/LandingIngredients'
 import styles from '../styles/Home.module.css'
+import Footer from '../components/Footer'
 
 export default function Home() {
   const [width, setwidth] = useState(0)
@@ -32,6 +33,10 @@ export default function Home() {
 
     {/* Ingredients Section */}
     <LandingIngredients width={width} />
+
+    <hr style={{width:'90vw',opacity:0.6}}/>
+    {/* footer section */}
+    <Footer />
     </>
   )
 }
