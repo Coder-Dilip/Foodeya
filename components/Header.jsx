@@ -47,10 +47,10 @@ export default function Header() {
     }
     return (
         <>
-            <nav className={styles.nav} style={{
-                width: '100%', margin: 'auto', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '1px 10px 17px -10px rgba(0,0,0,0.08)',
-                padding: '0 20px', position: 'fixed', top: 0, zIndex: 1000,marginTop:'15px'
-            }}>
+            <nav  style={{
+                width: '90%', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '1px 10px 17px -10px rgba(0,0,0,0.08)',
+                padding: '0 20px', position: 'fixed', top: 0, zIndex: 1000,marginTop:'15px',maxWidth:'1200px',borderRadius:'10px',left:width>1200?`${0.5*width-600}px`:'5%',right:'5%'
+            }} className={styles.nav}>
                 <div style={{
                     display: 'flex', width: '100%', margin: 'auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between',
                     padding: '0 20px', position: 'fixed', top: -6, zIndex: 1000, maxWidth: '1100px'
@@ -83,7 +83,7 @@ export default function Header() {
                         </div>
                     </div> : null}
 
-                    {width > 550 ? <button onClick={() => window.location.href = '/favourite'} className={router.pathname == '/favourite' ? styles.red_active : styles.nav_links}  style={{marginTop:'15px',borderRadius:"15px",border:'none',background:'white'}}><FavoriteIcon/></button> : null}
+                    {width > 550 ? <button onClick={() => window.location.href = '/favourite'} className={router.pathname == '/favourite' ? styles.red_active : styles.nav_links}  style={{marginTop:'15px',border:'none',background:'none'}}><FavoriteIcon/></button> : null}
 
                     {width < 550 ? <div onClick={handleClick}><Menu style={{cursor: 'pointer' }} /></div> : null}
                 </div>

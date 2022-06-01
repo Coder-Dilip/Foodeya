@@ -3,7 +3,6 @@ import Fade from "react-reveal/Fade";
 import styles from "../styles/Home.module.css"
 function LandingIngredients({ width }) {
   const [Email, setEmail] = useState("");
-  console.log(width);
   return (
     <div style={{ maxWidth: "1100px", width: "90vw", margin: "auto",marginBottom:"150px" }}>
       <div

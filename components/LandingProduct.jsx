@@ -13,7 +13,6 @@ function LandingProduct() {
 
   useEffect(() => {
     setwidth(window.innerWidth);
-    console.log(window.innerWidth);
   }, []);
 
   const products = [
