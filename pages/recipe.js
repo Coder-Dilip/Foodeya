@@ -1,16 +1,15 @@
 // import Fade from "react-reveal/Fade";
 import Header from "../components/Header";
 import React, { useEffect, useState } from "react";
-// import { Search } from "@mui/icons-material";
+import { Search } from "@mui/icons-material";
 import styles from "../styles/Home.module.css";
-function recipe({data}) {
+function recipe() {
+
+
 
   const [datas, setdatas] = useState([]);
 
   const Datas=({id,title,ingredients,image,instructions})=>{
-    
-
-    
     return (
       <>
       <h1>{title}</h1>
@@ -25,7 +24,18 @@ function recipe({data}) {
 
   useEffect(() => {
     setwidth(window.innerWidth);
-    console.log("data",data)
+  const call=async()=>{
+    let formdata = new FormData();
+      formdata.append("id", 13200);
+      formdata.append("key", "!@212x#he%^fg&*()fdd");
+      let result = await fetch("https://dilipbackend.xyz/api/recommend", {
+        method: "POST",
+        body: formdata,
+      });
+      result = await result.json();
+      setdatas(result)
+  }
+  call()
   }, []);
   const [focus, setfocus] = useState(false);
   return (
@@ -125,9 +135,9 @@ function recipe({data}) {
           placeholder="Search..."
           style={{ outline: "none", border: "none", padding: "10px 25px" }}
         />
-        {/* <Search
+        <Search
           style={{ backgound: "blue", borderRadius: "50%", color: "orangered" }}
-        /> */}
+        />
       </div>
       <div
         style={{
@@ -147,8 +157,7 @@ function recipe({data}) {
             flexWrap: "wrap",
           }}
         >
-          {/* <Datas /> */}
-          {data.length>0?data.map((element,index)=>(
+          {datas.length>0?datas.map((element,index)=>(
             <>
             <Datas 
             key={index}
@@ -168,18 +177,18 @@ function recipe({data}) {
 
 export default recipe;
 
-export async function getServerSideProps() {
-  let formdata = new FormData();
-  formdata.append("id", 13200);
-  formdata.append("key", "!@212x#he%^fg&*()fdd");
-  let result = await fetch("https://dilipbackend.xyz/api/recommend", {
-    method: "POST",
-    body: formdata,
-  });
-  result = await result.json();
-  return {
-    props: {
-      data: result,
-    },
-  };
-}
+// export async function getServerSideProps() {
+//   let formdata = new FormData();
+//   formdata.append("id", 13200);
+//   formdata.append("key", "!@212x#he%^fg&*()fdd");
+//   let result = await fetch("https://dilipbackend.xyz/api/recommend", {
+//     method: "POST",
+//     body: formdata,
+//   });
+//   result = await result.json();
+//   return {
+//     props: {
+//       data: result,
+//     },
+//   };
+// }
