@@ -1,7 +1,6 @@
 import styles from "../styles/Home.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Pagination } from "swiper";
-import Fade from "react-reveal/Fade";
 
 // Import Swiper styles
 import "swiper/css";
@@ -76,7 +75,6 @@ function LandingProduct() {
               Our Best Recipe For your Amazing Taste 😋
             </h1>
           </div>
-          <Fade right>
             <div
               className={styles.productSliderSide}
               style={{
@@ -156,7 +154,6 @@ function LandingProduct() {
                 </SwiperSlide>
               </Swiper>
             </div>
-          </Fade>
           <div
             style={{
               display: width < 512 ? "block" : "none",

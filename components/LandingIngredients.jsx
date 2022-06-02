@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Fade from "react-reveal/Fade";
+// import Fade from "react-reveal/Fade";
 import styles from "../styles/Home.module.css"
 function LandingIngredients({ width }) {
   const [Email, setEmail] = useState("");
@@ -15,7 +15,7 @@ function LandingIngredients({ width }) {
           marginBottom: "60px",
         }}
       >
-        <Fade left>
+        {/* <Fade left> */}
           <div>
             <p style={{ opacity: 0.5, marginBottom: "20px" }}>Recipe Details</p>
             <h1 style={{ maxWidth: "400px" }}>
@@ -50,8 +50,8 @@ function LandingIngredients({ width }) {
               Explore
             </button>
           </div>
-        </Fade>
-        <Fade right>
+        {/* </Fade> */}
+        {/* <Fade right> */}
           <img
             src="/instruct.png"
             style={{
@@ -61,7 +61,7 @@ function LandingIngredients({ width }) {
             }}
             alt=""
           />
-        </Fade>
+        {/* </Fade> */}
       </div>
       <h3
         style={{ textAlign: "center", color: "orange", marginBottom: "70px" }}
@@ -105,15 +105,15 @@ function LandingIngredients({ width }) {
               Recipes
             </span>
           </h1>
-          <Fade bottom>
+          {/* <Fade bottom> */}
             <img
               src="/easy.webp"
               style={{ marginBottom: "30px", maxWidth: "90vw" }}
               alt=""
             />
-          </Fade>
+          {/* </Fade> */}
         </div>
-        <Fade top>
+        {/* <Fade top> */}
           <div>
             <h3 style={{ marginBottom: "-5px", color: "orangered" }}>
               🌟 Easy Instructions
@@ -170,7 +170,7 @@ function LandingIngredients({ width }) {
               the world.
             </p>
           </div>
-        </Fade>
+        {/* </Fade> */}
       </div>
 
       <div
@@ -241,7 +241,7 @@ function LandingIngredients({ width }) {
         </div>
 
         <img src="/plate.png" style={{width:width>600?"60vw":"90vw",margin:"auto",marginTop:"180px",display:"block"}} alt="" />
-        <Fade up>
+        {/* <Fade up> */}
         <button style={{ padding: "20px 35px",
                 borderRadius: "7px",
                 
@@ -250,7 +250,7 @@ function LandingIngredients({ width }) {
                 color: "white",
                 background: "orange",
                 fontWeight:"bold",margin:"auto",display:"block",marginTop: "90px",borderBottomRightRadius:"50px"}}>Let's Explore</button>
-        </Fade>
+        {/* </Fade> */}
     </div>
   );
 }
