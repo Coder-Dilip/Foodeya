@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 // import { Search } from "@mui/icons-material";
 import styles from "../styles/Home.module.css";
 function recipe() {
-  console.log("data",data.length)
+  // console.log("data",data.length)
   const [modalShow, setModalShow] = React.useState();
   const [datas, setdatas] = useState([]);
 

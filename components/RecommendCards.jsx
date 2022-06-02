@@ -7,6 +7,6 @@ function RecommendCards({ id, title, ingredients, image, instructions }) {
     />
     </>
   );
-}
+};
 
 export default RecommendCards;
