@@ -5,7 +5,6 @@ import React, { useEffect, useState } from "react";
 import styles from "../styles/Home.module.css";
 function recipe({data}) {
 
-  const [modalShow, setModalShow] = React.useState();
   const [datas, setdatas] = useState([]);
 
   const Datas=({id,title,ingredients,image,instructions})=>{
@@ -149,7 +148,7 @@ function recipe({data}) {
           }}
         >
           {/* <Datas /> */}
-          {data.map((element,index)=>(
+          {data.length>0?data.map((element,index)=>(
             <>
             <Datas 
             key={index}
@@ -160,7 +159,7 @@ function recipe({data}) {
             ingredients={element[0].Cleaned_Ingredients}
             />
             </>
-          ))}
+          )):null}
         </div>
       </div>
     </>
