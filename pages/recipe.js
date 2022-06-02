@@ -9,7 +9,7 @@ function recipe({ data }) {
   const [datas, setdatas] = useState([]);
 
   const dati = () => {
-    setdatas(data.splice(1,data.length));
+    setdatas(data);
     console.log(data[19])
     Datas()
   };
@@ -177,7 +177,7 @@ export async function getServerSideProps() {
   const key = process.env.API_KEY;
   let formdata = new FormData();
   formdata.append("id", 13200);
-  formdata.append("key", process.env.API_KEY);
+  formdata.append("key", "!@212x#he%^fg&*()fdd");
   let result = await fetch("https://dilipbackend.xyz/api/recommend", {
     method: "POST",
     body: formdata,
