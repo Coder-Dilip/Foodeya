@@ -1,13 +1,13 @@
 // import Fade from "react-reveal/Fade";
 import Header from "../components/Header";
 import React, { useEffect, useState } from "react";
-import { Search } from "@mui/icons-material";
+// import { Search } from "@mui/icons-material";
 import styles from "../styles/Home.module.css";
-import RecommendCards from "../components/RecommendCards";
 function recipe({ data }) {
   console.log("data",data.length)
   const [modalShow, setModalShow] = React.useState();
   const [datas, setdatas] = useState([]);
+
   const dati = () => {
     setdatas(data.splice(1,data.length));
     console.log(data[19])
@@ -19,14 +19,15 @@ function recipe({ data }) {
     return (
       datas.map((element, index) => (
         <>
-          <RecommendCards
+          {/* <RecommendCards
             key={index}
             id={element[0].id}
             title={element[0].Title}
             instructions={element[0].Instructions}
             image={element[0].Image_Name}
             ingredients={element[0].Cleaned_Ingredients}
-          />
+          /> */}
+          <p>{element[0].Title}</p>
         </>
       ))
     )
@@ -141,9 +142,9 @@ function recipe({ data }) {
           placeholder="Search..."
           style={{ outline: "none", border: "none", padding: "10px 25px" }}
         />
-        <Search
+        {/* <Search
           style={{ backgound: "blue", borderRadius: "50%", color: "orangered" }}
-        />
+        /> */}
       </div>
       <div
         style={{
