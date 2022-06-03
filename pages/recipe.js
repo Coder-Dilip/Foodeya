@@ -12,8 +12,10 @@ function recipe() {
   const Datas=({id,title,ingredients,image,instructions})=>{
     return (
       <>
-      <h1>{title}</h1>
-      <img src={`https://dilipbackend.xyz/public/storage/recommend/food/${image}.jpg`}/>
+      <div style={{display:'flex',flexDirection:'column',margin:'20px',marginTop:'-20px'}}>
+      <img style={{width:'300px',height:'auto',objectFit:'cover'}} src={`https://dilipbackend.xyz/public/storage/recommend/food/${image}.jpg`}/>
+      <h4 style={{maxWidth:'300px',color:'white',fontFamily:'sans-serif',fontWeight:'800',marginTop:'-60px',padding:'15px'}}>{title.toUpperCase()}</h4>
+      </div>
       </>
     )
   }
@@ -148,19 +150,18 @@ function recipe() {
           display:'block'
         }}
       >
-        <h2>Recommended Recipes</h2>
+        <h2 style={{marginBottom:'50px'}}>Recommended Recipes</h2>
         <div
           style={{
             width: "100%",
             display: "flex",
-            alignItems: "center",
             flexWrap: "wrap",
           }}
         >
-          {datas.length>0?datas.map((element,index)=>(
+          {datas.length>0?datas.slice(1,datas.length).map((element,index)=>(
             <>
             <Datas 
-            key={index}
+            key={element[0].id}
             id={element[0].id}
             title={element[0].Title}
             instructions={element[0].Instructions}
@@ -177,18 +178,4 @@ function recipe() {
 
 export default recipe;
 
-// export async function getServerSideProps() {
-//   let formdata = new FormData();
-//   formdata.append("id", 13200);
-//   formdata.append("key", "!@212x#he%^fg&*()fdd");
-//   let result = await fetch("https://dilipbackend.xyz/api/recommend", {
-//     method: "POST",
-//     body: formdata,
-//   });
-//   result = await result.json();
-//   return {
-//     props: {
-//       data: result,
-//     },
-//   };
-// }
+
