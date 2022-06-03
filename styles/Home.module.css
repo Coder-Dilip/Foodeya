@@ -549,3 +549,11 @@
 .links_icons_footer{
   font-size: 1.3rem;
 }
+.recommended_elements{
+  transition:.3s
+}
+
+.recommended_elements:hover{
+transition: .3s;
+transform: scale(1.06);
+}

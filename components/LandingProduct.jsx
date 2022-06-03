@@ -83,13 +83,13 @@ function LandingProduct() {
               }}
             >
               <Swiper
-                autoplay={1}
+                autoplay={3}
                 slidesPerView={width < 1400 ? (width < 500 ? 1.2 : 1.5) : 2.2}
                 freeMode={true}
                 modules={[FreeMode, Pagination,Autoplay]}
                 loop={true}
                 speed={1000}
-                autoplayDisableOnInteraction= {false}
+                // autoplayDisableOnInteraction= {true}
               >
                 {/* mobile ko lagi simple card banauni slider hatayera */}
 

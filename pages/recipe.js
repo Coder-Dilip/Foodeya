@@ -11,23 +11,21 @@ function recipe() {
   const [recommend, setrecommend] = useState("")
 
   const Datas=({id,title,ingredients,image,instructions})=>{
-  
-  
-   
     return (
       <>
-      <div style={{display:'flex',flexDirection:'column',margin:'20px',marginTop:'-20px'}}>
-      <img style={{width:width<760?'200px':'300px',height:'auto',objectFit:'cover'}} src={`https://dilipbackend.xyz/public/storage/recommend/food/${image}.jpg`}/>
+      <div className={styles.recommended_elements} style={{display:'flex',flexDirection:'column',margin:'20px',marginTop:'-20px',maxWidth:width<760?'200px':'300px',borderTopLeftRadius:'8px',borderTopRightRadius:'8px',boxShadow:'0px 2px 9px 0px rgba(0,0.3,5.3,0.15)'}}>
+      <img style={{width:width<760?'200px':'300px',height:'auto',objectFit:'cover',borderTopLeftRadius:'8px',borderTopRightRadius:'8px'}} src={`https://dilipbackend.xyz/public/storage/recommend/food/${image}.jpg`}/>
       <h5 style={{maxWidth:width<760?'200px':'300px',color:'white',marginTop:'-70px',padding:'15px',background:'#00000078',display:'inline',height:'70px',fontSize:width<750?'0.8rem':'0.9rem'}}>{title.toUpperCase().split(" ").splice(0,7).join(" ")}</h5>
+      <h3 style={{color:'orange'}}>Ingredients</h3>
+      <p style={{marginTop:'-8px'}}>{ingredients.split(" ").splice(0,8).join(" ")}...</p>
+      <button style={{padding:'8px 25px',background:'orange',color:'white',outline:'none',borderRadius:'3px',border:'none',marginBottom:'80px',cursor:'pointer'}}>Details</button>
       </div>
       </>
     )
   }
  
- 
-
   const [width, setwidth] = useState(0);
-  const [search, setsearch] = useState(0)
+  const [search, setsearch] = useState("chicken")
 
   useEffect(() => {
     setwidth(window.innerWidth);
@@ -37,7 +35,8 @@ function recipe() {
     localStorage.setItem('food_id',JSON.stringify({id:id}))
       formdata.append("id", id);
       formdata.append("key", "!@212x#he%^fg&*()fdd");
-      let result = await fetch("https://dilipbackend.xyz/api/recommend", {
+      formdata.append("searchItem",search)
+      let result = await fetch("https://dilipbackend.xyz/api/r", {
         method: "POST",
         body: formdata,
       });
@@ -119,7 +118,7 @@ function recipe() {
         }}
       >
         Search any recipe you want to, you can type single word such as
-        (chicken, roast, pie, icecream, etc) if you are confused ;){" "}
+        (chicken, roast, chocolate, burger, etc) if you are confused ;){" "}
       </p>
 
       <div
@@ -170,7 +169,7 @@ function recipe() {
           display:'block'
         }}
       >
-        <h2 style={{marginBottom:'50px'}}>Recommended Recipes</h2>
+        <h2 style={{marginBottom:'80px'}}>Recommended Recipes</h2>
         <div
           style={{
             width: "100%",
@@ -179,11 +178,11 @@ function recipe() {
             justifyContent:width<535?'center':''
           }}
         >
-          {datas.length>0?datas.slice(1,datas.length).map((element,index)=>(
+          {datas.length>0?datas.splice(1,datas.length).map((element,index)=>(
             <>
             <Datas 
             key={element[0].id}
-            id={element[0].id}
+            id= {element[0].id}
             title={element[0].Title}
             instructions={element[0].Instructions}
             image={element[0].Image_Name}
