@@ -1,6 +1,6 @@
 import styles from "../styles/Home.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { FreeMode, Pagination } from "swiper";
+import { FreeMode, Pagination,Autoplay } from "swiper";
 
 // Import Swiper styles
 import "swiper/css";
@@ -83,10 +83,13 @@ function LandingProduct() {
               }}
             >
               <Swiper
+                autoplay={1}
                 slidesPerView={width < 1400 ? (width < 500 ? 1.2 : 1.5) : 2.2}
                 freeMode={true}
-                modules={[FreeMode, Pagination]}
+                modules={[FreeMode, Pagination,Autoplay]}
                 loop={true}
+                speed={1000}
+                autoplayDisableOnInteraction= {false}
               >
                 {/* mobile ko lagi simple card banauni slider hatayera */}
 
