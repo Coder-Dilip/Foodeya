@@ -8,13 +8,17 @@ function recipe() {
 
 
   const [datas, setdatas] = useState([]);
+  const [recommend, setrecommend] = useState("")
 
   const Datas=({id,title,ingredients,image,instructions})=>{
+  
+  
+   
     return (
       <>
       <div style={{display:'flex',flexDirection:'column',margin:'20px',marginTop:'-20px'}}>
-      <img style={{width:'300px',height:'auto',objectFit:'cover'}} src={`https://dilipbackend.xyz/public/storage/recommend/food/${image}.jpg`}/>
-      <h4 style={{maxWidth:'300px',color:'white',fontFamily:'sans-serif',fontWeight:'800',marginTop:'-60px',padding:'15px'}}>{title.toUpperCase()}</h4>
+      <img style={{width:width<760?'200px':'300px',height:'auto',objectFit:'cover'}} src={`https://dilipbackend.xyz/public/storage/recommend/food/${image}.jpg`}/>
+      <h5 style={{maxWidth:width<760?'200px':'300px',color:'white',marginTop:'-70px',padding:'15px',background:'#00000078',display:'inline',height:'70px',fontSize:width<750?'0.8rem':'0.9rem'}}>{title.toUpperCase().split(" ").splice(0,7).join(" ")}</h5>
       </div>
       </>
     )
@@ -23,12 +27,15 @@ function recipe() {
  
 
   const [width, setwidth] = useState(0);
+  const [search, setsearch] = useState(0)
 
   useEffect(() => {
     setwidth(window.innerWidth);
   const call=async()=>{
     let formdata = new FormData();
-      formdata.append("id", 13200);
+    let id=search
+    localStorage.setItem('food_id',JSON.stringify({id:id}))
+      formdata.append("id", id);
       formdata.append("key", "!@212x#he%^fg&*()fdd");
       let result = await fetch("https://dilipbackend.xyz/api/recommend", {
         method: "POST",
@@ -38,7 +45,7 @@ function recipe() {
       setdatas(result)
   }
   call()
-  }, []);
+  }, [search]);
   const [focus, setfocus] = useState(false);
   return (
     <>
@@ -118,9 +125,8 @@ function recipe() {
       <div
         id="search"
         style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
+        
+
           padding: "10px",
           boxShadow: "0px 2px 9px 0px rgba(0,0.3,5.3,0.15)",
           maxWidth: "400px",
@@ -131,15 +137,29 @@ function recipe() {
           marginBottom: "50px",
         }}
       >
+        <form style={{  display: "flex",
+          alignItems: "center",
+          justifyContent: "space-around"}} onSubmit={(e)=>{
+            setsearch(recommend)
+            e.preventDefault()
+            }}>
         <input
           autoFocus={focus}
           type="text"
           placeholder="Search..."
           style={{ outline: "none", border: "none", padding: "10px 25px" }}
+          value={recommend}
+          onChange={(e)=>{
+            setrecommend(e.target.value)
+            
+          }}
+         
         />
         <Search
           style={{ backgound: "blue", borderRadius: "50%", color: "orangered" }}
+          onClick={(()=>{setsearch(recommend)})}
         />
+        </form>
       </div>
       <div
         style={{
@@ -156,6 +176,7 @@ function recipe() {
             width: "100%",
             display: "flex",
             flexWrap: "wrap",
+            justifyContent:width<535?'center':''
           }}
         >
           {datas.length>0?datas.slice(1,datas.length).map((element,index)=>(
