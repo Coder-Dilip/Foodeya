@@ -144,7 +144,9 @@ function recipe() {
       >
         <form style={{  display: "flex",
           alignItems: "center",
-          justifyContent: "space-around"}} >
+          justifyContent: "space-around"}}
+          onSubmit={(e)=>{e.preventDefault();setsearch(recommend)}}
+          >
         <input
           type="text"
           placeholder="Search..."
