@@ -41,6 +41,7 @@ function recipe() {
         body: formdata,
       });
       result = await result.json();
+      console.log(result.length)
       setdatas(result)
   }
   call()
@@ -138,10 +139,7 @@ function recipe() {
       >
         <form style={{  display: "flex",
           alignItems: "center",
-          justifyContent: "space-around"}} onSubmit={(e)=>{
-            setsearch(recommend)
-            e.preventDefault()
-            }}>
+          justifyContent: "space-around"}} >
         <input
           autoFocus={focus}
           type="text"
