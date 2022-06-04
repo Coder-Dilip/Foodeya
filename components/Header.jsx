@@ -56,7 +56,7 @@ export default function Header() {
                     padding: '0 20px', position: 'fixed', top: -6, zIndex: 1000, maxWidth: '1100px'
                 }}>
                     <Link href='/'><div style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}>
-                        <img src="foodeya.svg" alt="food logo"  style={{width:'120px'}} />
+                        <img src="/foodeya.svg" alt="food logo"  style={{width:'120px'}} />
                     </div></Link>
 
                     {width > 550 ? <div style={{ width: '60%', display: 'flex', alignItems: 'center', justifyContent: 'space-evenly', maxWidth: '500px', fontWeight: 'bold',marginTop:'15px' }}>
