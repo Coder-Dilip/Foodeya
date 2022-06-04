@@ -1,6 +1,7 @@
 import styles from "../styles/Home.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Pagination,Autoplay } from "swiper";
+import Fade from "react-reveal/Fade";
 
 // Import Swiper styles
 import "swiper/css";
@@ -82,6 +83,7 @@ function LandingProduct() {
                 display: width < 512 ? "none" : "block",
               }}
             >
+              <Fade right>
               <Swiper
                 autoplay={3}
                 slidesPerView={width < 1400 ? (width < 500 ? 1.2 : 1.5) : 2.2}
@@ -156,6 +158,7 @@ function LandingProduct() {
                   </div>
                 </SwiperSlide>
               </Swiper>
+              </Fade>
             </div>
           <div
             style={{

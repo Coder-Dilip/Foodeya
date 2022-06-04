@@ -3,6 +3,8 @@ import Header from "../../components/Header";
 import React, { useEffect, useState } from "react";
 import { Search } from "@mui/icons-material";
 import styles from "../../styles/Home.module.css";
+import Fade from "react-reveal/Fade";
+
 function recipe() {
   const [recommend, setrecommend] = useState("");
   const Datas = ({ id, title, ingredients, image, instructions }) => {
@@ -159,7 +161,7 @@ function recipe() {
           Search
         </button>
       </div>
-
+<Fade up>
       <h1
         style={{
           maxWidth: "400px",
@@ -228,6 +230,7 @@ function recipe() {
           />
         </form>
       </div>
+      </Fade>
       <div
         style={{
           margin: "auto",

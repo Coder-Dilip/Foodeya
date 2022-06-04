@@ -1,5 +1,5 @@
 import { useState } from "react";
-// import Fade from "react-reveal/Fade";
+import Fade from "react-reveal/Fade";
 import styles from "../styles/Home.module.css"
 function LandingIngredients({ width }) {
   const [Email, setEmail] = useState("");
@@ -16,6 +16,7 @@ function LandingIngredients({ width }) {
         }}
       >
         {/* <Fade left> */}
+        <Fade up>
           <div>
             <p style={{ opacity: 0.5, marginBottom: "20px" }}>Recipe Details</p>
             <h1 style={{ maxWidth: "400px" }}>
@@ -50,6 +51,7 @@ function LandingIngredients({ width }) {
               Explore
             </button>
           </div>
+          </Fade>
         {/* </Fade> */}
         {/* <Fade right> */}
           <img
@@ -114,6 +116,7 @@ function LandingIngredients({ width }) {
           {/* </Fade> */}
         </div>
         {/* <Fade top> */}
+        <Fade right>
           <div>
             <h3 style={{ marginBottom: "-5px", color: "orangered" }}>
               🌟 Easy Instructions
@@ -170,6 +173,7 @@ function LandingIngredients({ width }) {
               the world.
             </p>
           </div>
+          </Fade>
         {/* </Fade> */}
       </div>
 
@@ -242,6 +246,7 @@ function LandingIngredients({ width }) {
 
         <img src="/plate.png" style={{width:width>600?"60vw":"90vw",margin:"auto",marginTop:"180px",display:"block"}} alt="" />
         {/* <Fade up> */}
+        <Fade up>
         <button style={{ padding: "20px 35px",
                 borderRadius: "7px",
                 
@@ -250,7 +255,7 @@ function LandingIngredients({ width }) {
                 color: "white",
                 background: "orange",
                 fontWeight:"bold",margin:"auto",display:"block",marginTop: "90px",borderBottomRightRadius:"50px"}}>Let's Explore</button>
-        {/* </Fade> */}
+        </Fade>
     </div>
   );
 }
