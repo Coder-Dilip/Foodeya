@@ -42,7 +42,7 @@ function recipe() {
       });
       result = await result.json();
       console.log(result.length)
-      setdatas(result)
+      setdatas(result[1])
   }
   call()
   }, [search]);
@@ -141,14 +141,12 @@ function recipe() {
           alignItems: "center",
           justifyContent: "space-around"}} >
         <input
-          autoFocus={focus}
           type="text"
           placeholder="Search..."
           style={{ outline: "none", border: "none", padding: "10px 25px" }}
           value={recommend}
           onChange={(e)=>{
             setrecommend(e.target.value)
-            
           }}
          
         />
@@ -179,12 +177,12 @@ function recipe() {
           {datas.length>0?datas.splice(1,datas.length).map((element,index)=>(
             <>
             <Datas 
-            key={element[0].id}
-            id= {element[0].id}
-            title={element[0].Title}
-            instructions={element[0].Instructions}
-            image={element[0].Image_Name}
-            ingredients={element[0].Cleaned_Ingredients}
+            key={element.id}
+            id= {element.id}
+            title={element.Title}
+            instructions={element.Instructions}
+            image={element.Image_Name}
+            ingredients={element.Cleaned_Ingredients}
             />
             </>
           )):null}
