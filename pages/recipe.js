@@ -25,7 +25,9 @@ function recipe() {
   }
  
   const [width, setwidth] = useState(0);
-  const [search, setsearch] = useState("chicken")
+  const [search, setsearch] = useState("chicken");
+  const [localData, setlocalData] = useState([]);
+  const showData=()=>console.log(localData)
 
   useEffect(() => {
     setwidth(window.innerWidth);
@@ -41,8 +43,11 @@ function recipe() {
         body: formdata,
       });
       result = await result.json();
-      console.log(result.length)
-      setdatas(result[1])
+      localStorage.setItem('food_data',JSON.stringify(result))
+      setlocalData(JSON.parse(localStorage.getItem('food_data')))
+      setdatas(result)
+      showData()
+      console.log(JSON.parse(localStorage.getItem('food_data')))
   }
   call()
   }, [search]);
@@ -174,10 +179,10 @@ function recipe() {
             justifyContent:width<535?'center':''
           }}
         >
-          {datas.length>0?datas.splice(1,datas.length).map((element,index)=>(
+          {typeof window !== 'undefined'?JSON.parse(localStorage.getItem('food_data'))?JSON.parse(localStorage.getItem('food_data')).splice(0,JSON.parse(localStorage.getItem('food_data')).length).map((element,index)=>(
             <>
             <Datas 
-            key={element.id}
+            key={element.index}
             id= {element.id}
             title={element.Title}
             instructions={element.Instructions}
@@ -185,7 +190,7 @@ function recipe() {
             ingredients={element.Cleaned_Ingredients}
             />
             </>
-          )):null}
+          )):null:null}
         </div>
       </div>
     </>
