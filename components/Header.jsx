@@ -88,7 +88,7 @@ const route=useRouter()
                         </div>
                     </div> : null}
 
-{width>770?<form style={{display:'flex',alignItems:'center',borderRadius:'3px',padding:'10px',boxShadow:'0px 10px 17px -10px rgba(0,0,0,0.28)'}} onSubmit={(e)=>{e.preventDefault();handleSearch(1,search)}}><input style={{border:'none',width:'100px',outline:'none'}} placeholder='Search...' value={search} onChange={(e)=>setsearch(e.target.value)}/><Search style={{color:'black'}}/></form>:null}
+{width>770?<form style={{display:'flex',alignItems:'center',borderRadius:'3px',padding:'10px',boxShadow:'0px 10px 17px -10px rgba(0,0,0,0.28)'}} onSubmit={(e)=>{e.preventDefault();handleSearch(1,search)}}><input style={{border:'none',width:'100px',outline:'none',background:'none'}} placeholder='Search...' value={search} onChange={(e)=>setsearch(e.target.value)}/><Search style={{color:'black'}}/></form>:null}
                     {width < 550 ? <div onClick={handleClick}><Menu style={{cursor: 'pointer' }} /></div> : null}
                 </div>
             </nav>
