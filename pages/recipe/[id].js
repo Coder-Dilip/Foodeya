@@ -415,7 +415,7 @@ const Id = () => {
           width: "100%",
           display: "flex",
           flexWrap: "wrap",
-          justifyContent: width < 535 ? "center" : "",
+          justifyContent: width < 535 ? "left" : "",
           marginTop: "100px",
           marginLeft: "7%",
         }}
