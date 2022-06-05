@@ -33,7 +33,6 @@ function recipe() {
             maxWidth: width < 760 ? "200px" : "300px",
             borderTopLeftRadius: "8px",
             borderTopRightRadius: "8px",
-            boxShadow: "0px 2px 9px 0px rgba(0,0.3,5.3,0.15)",
           }}
         >
           <img
@@ -84,7 +83,7 @@ function recipe() {
   };
 
   const [width, setwidth] = useState(0);
-  const [search, setsearch] = useState("chicken");
+  const [search, setsearch] = useState("Bourbon");
   const [localData, setlocalData] = useState([]);
   const showData = () => console.log(localData);
 
