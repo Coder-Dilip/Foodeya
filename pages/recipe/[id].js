@@ -33,7 +33,7 @@ const Id = () => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const [search, setsearch] = useState("Bourbon");
+  const [search, setsearch] = useState("");
   const [recommend, setrecommend] = useState("");
   const [relaunch, setrelaunch] = useState(1);
   const [message, setmessage] = useState("");
@@ -136,6 +136,9 @@ const Id = () => {
   }, []);
 
   const call = async () => {
+    if(search==""){
+      return
+    }
     let formdata = new FormData();
     formdata.append("key", "!@212x#he%^fg&*()fdd");
     formdata.append("searchItem", search);
