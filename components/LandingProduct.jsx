@@ -1,23 +1,31 @@
 import styles from "../styles/Home.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { FreeMode, Pagination,Autoplay } from "swiper";
+import { FreeMode,Autoplay } from "swiper";
 import Fade from "react-reveal/Fade";
 
 // Import Swiper styles
 import "swiper/css";
 
 import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 
 function LandingProduct() {
+  const route=useRouter()
   const [width, setwidth] = useState(0);
 
   useEffect(() => {
     setwidth(window.innerWidth);
   }, []);
 
+
+  const handleClick=(id,title)=>{
+    localStorage.setItem('landingID',JSON.stringify({id:id,title:title}))
+    route.push(`/recipe/${id}`)
+  }
+
   const products = [
     [
-      "miso-butter roast chicken with acorn squash panzan",
+      "miso-butter roast chicken with acorn squash panzanella",
       0,
       "miso-butter-roast-chicken-acorn-squash-panzanella",
     ],
@@ -85,18 +93,23 @@ function LandingProduct() {
             >
               <Fade right>
               <Swiper
-                autoplay={3}
+                 autoplay= {{
+                  delay: 10,
+                  disableOnInteraction: false,
+                  autoplay:true
+                 }
+                }
                 slidesPerView={width < 1400 ? (width < 500 ? 1.2 : 1.5) : 2.2}
                 freeMode={true}
-                modules={[FreeMode, Pagination,Autoplay]}
+                modules={[FreeMode,Autoplay]}
                 loop={true}
-                speed={1000}
-                // autoplayDisableOnInteraction= {true}
+                speed={3000}
+               
               >
-                {/* mobile ko lagi simple card banauni slider hatayera */}
+               
 
                 <SwiperSlide>
-                  <div className={styles.productScroll}>
+                  <div onClick={()=>handleClick(products[0][1],products[0][0].split(" ").slice(0,3).join(" "))} className={styles.productScroll}>
                     <h2>Roast Chicken</h2>
                     <h5>{products[0][0]}</h5>
                     <img
@@ -107,7 +120,7 @@ function LandingProduct() {
                 </SwiperSlide>
 
                 <SwiperSlide>
-                  <div className={styles.productScroll}>
+                  <div onClick={()=>handleClick(products[1][1],products[1][0].split(" ").slice(0,3).join(" "))}  className={styles.productScroll}>
                     <h2>Falafels</h2>
                     <h5>{products[1][0]}</h5>
                     <img
@@ -118,7 +131,7 @@ function LandingProduct() {
                 </SwiperSlide>
 
                 <SwiperSlide>
-                  <div className={styles.productScroll}>
+                  <div onClick={()=>handleClick(products[2][1],products[2][0].split(" ").slice(0,3).join(" "))} className={styles.productScroll}>
                     <h2>Chestnut Mix</h2>
                     <h5>{products[2][0]}</h5>
                     <img
@@ -128,7 +141,7 @@ function LandingProduct() {
                   </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                  <div className={styles.productScroll}>
+                  <div onClick={()=>handleClick(products[3][1],products[3][0].split(" ").slice(0,3).join(" "))} className={styles.productScroll}>
                     <h2>Cornmeal</h2>
                     <h5>{products[3][0]}</h5>
                     <img
@@ -138,7 +151,7 @@ function LandingProduct() {
                   </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                  <div className={styles.productScroll}>
+                  <div onClick={()=>handleClick(products[4][1],products[4][0].split(" ").slice(0,3).join(" "))} className={styles.productScroll}>
                     <h2>Grilled Shrimp</h2>
                     <h5>{products[4][0]}</h5>
                     <img
@@ -148,7 +161,7 @@ function LandingProduct() {
                   </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                  <div className={styles.productScroll}>
+                  <div onClick={()=>handleClick(products[5][1],products[5][0].split(" ").slice(0,3).join(" "))} className={styles.productScroll}>
                     <h2>sloppy joe</h2>
                     <h5>{products[5][0]}</h5>
                     <img

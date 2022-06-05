@@ -1,4 +1,4 @@
-import { useRouter } from "next/router";
+import { Router, useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Header from "../../components/Header";
 import FavoriteIcon from "@mui/icons-material/Favorite";
@@ -37,6 +37,9 @@ const Id = () => {
   const [recommend, setrecommend] = useState("");
   const [relaunch, setrelaunch] = useState(1);
   const [message, setmessage] = useState("");
+  const router=useRouter();
+
+  
 
   const Datas = ({ id, title, ingredients, image, instructions }) => {
     return (
@@ -136,12 +139,19 @@ const Id = () => {
   }, []);
 
   const call = async () => {
-    if(search==""){
+    if(search=="" && !localStorage.getItem('landingID')){
       return
+    }
+    let searchIt=""
+    if(localStorage.getItem("landingID")){
+       searchIt=JSON.parse(localStorage.getItem('landingID')).title
+       localStorage.removeItem('landingID')
+    }else{
+      searchIt=search
     }
     let formdata = new FormData();
     formdata.append("key", "!@212x#he%^fg&*()fdd");
-    formdata.append("searchItem", search);
+    formdata.append("searchItem", searchIt);
     let result = await fetch("https://dilipbackend.xyz/api/r", {
       method: "POST",
       body: formdata,
@@ -161,6 +171,7 @@ const Id = () => {
       getRecommendation();
       setlocalData(JSON.parse(localStorage.getItem("food_id")));
       setmessage("");
+      router.push(`/recipe/${JSON.parse(localStorage.getItem("food_id")).id}`)
     } else {
       setmessage("No Such Recipes :(");
     }
