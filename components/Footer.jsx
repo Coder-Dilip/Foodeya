@@ -64,7 +64,7 @@ function Footer() {
       >
         If you have the delicious recipes in your mind and you want to contribute in this site then please, feel free to{" "}
         <span
-          onClick={() => (window.location.href = "/contact")}
+          onClick={() => (window.location.href = "/Contact")}
           className={styles.nomadicTravelers}
           style={{
               color:'black',
@@ -136,7 +136,7 @@ function Footer() {
         <input
           className={styles.contact}
           style={{
-              color:'white', marginTop: "30px", outline: "none", textAlign: "center" }}
+              color:'white', marginTop: "30px", outline: "none", textAlign: "center",background:'orange' }}
           value="foodyearecipes@gmail.com"
           contentEditable={false}
           readOnly={true}

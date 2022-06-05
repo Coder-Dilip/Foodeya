@@ -174,6 +174,7 @@ function LandingProduct() {
               </Fade>
             </div>
           <div
+          onClick={()=>handleClick(products[5][1],products[5][0].split(" ").slice(0,3).join(" "))}
             style={{
               display: width < 512 ? "block" : "none",
               marginTop: "50px",

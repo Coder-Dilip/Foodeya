@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { Search } from "@mui/icons-material";
 import styles from "../../styles/Home.module.css";
 import Fade from "react-reveal/Fade";
+import Footer from '../../components/Footer'
 
 function recipe() {
   const [render, setrender] = useState("");
@@ -273,6 +274,7 @@ function recipe() {
             : null}
         </div>
       </div>
+      <Footer />
     </>
   );
 }

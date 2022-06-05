@@ -10,6 +10,8 @@ import Typography from "@mui/material/Typography";
 import Reveal from "react-reveal/Reveal";
 import styles from "../../styles/Home.module.css";
 import { Search } from "@mui/icons-material";
+import Footer from '../../components/Footer'
+
 
 const style = {
   position: "absolute",
@@ -446,6 +448,7 @@ const Id = () => {
             ))
           : null}
       </div>
+      <Footer />
     </>
   );
 };

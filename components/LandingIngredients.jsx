@@ -1,8 +1,11 @@
+import { useRouter } from "next/router";
 import { useState } from "react";
 import Fade from "react-reveal/Fade";
 import styles from "../styles/Home.module.css"
 function LandingIngredients({ width }) {
   const [Email, setEmail] = useState("");
+  const [Message, setMessage] = useState("")
+  const route=useRouter()
   return (
     <div style={{ maxWidth: "1100px", width: "90vw", margin: "auto",marginBottom:"150px" }}>
       <div
@@ -47,6 +50,8 @@ function LandingIngredients({ width }) {
                 color: "white",
                 background: "#fca503",
               }}
+
+              onClick={()=>route.push('/recipe')}
             >
               Explore
             </button>
@@ -209,11 +214,12 @@ function LandingIngredients({ width }) {
             value={Email}
             onChange={(e) => {
               setEmail(e.target.value);
+              setMessage("")
             }}
             style={{padding:"12px 25px",outline:"none",border:"none",background:"#ebebeb",borderRadius:"10px",borderTopLeftRadius:"0px",borderBottomLeftRadius:"0px"}}
           />
           </div>
-          <button style={{
+          <button onClick={()=>Email?setMessage("Subscribed"):setMessage("Email?")} style={{
                 padding: "10px 25px",
                 borderRadius: "7px",
                 marginTop: "20px",
@@ -223,6 +229,8 @@ function LandingIngredients({ width }) {
                 background: "orange",
                 fontWeight:"bold",
               }}>Subscribe</button>
+
+          <p style={{color:!Email?'red':'green',fontWeight:'bolder',marginTop:'25px'}}>{Message}</p>
         </div>
       </div>
       <div
@@ -247,7 +255,7 @@ function LandingIngredients({ width }) {
         <img src="/plate.png" style={{width:width>600?"60vw":"90vw",margin:"auto",marginTop:"180px",display:"block"}} alt="" />
         {/* <Fade up> */}
         <Fade up>
-        <button style={{ padding: "20px 35px",
+        <button onClick={()=>route.push('/recipe')} style={{ padding: "20px 35px",
                 borderRadius: "7px",
                 
                 cursor: "pointer",
