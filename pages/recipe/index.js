@@ -6,6 +6,7 @@ import styles from "../../styles/Home.module.css";
 import Fade from "react-reveal/Fade";
 
 function recipe() {
+  const [render, setrender] = useState("");
   const [recommend, setrecommend] = useState("");
   const Datas = ({ id, title, ingredients, image, instructions }) => {
     return (
@@ -88,6 +89,7 @@ function recipe() {
   const showData = () => console.log(localData);
 
   useEffect(() => {
+    setrender(1)
     console.log = function () {};
     setwidth(window.innerWidth);
     const call = async () => {
@@ -245,10 +247,10 @@ function recipe() {
             width: "100%",
             display: "flex",
             flexWrap: "wrap",
-            justifyContent: width < 535 ? "center" : "",
+            justifyContent: width < 535 ? "left" : "",
           }}
         >
-          {typeof window !== "undefined"
+          {render==1
             ? JSON.parse(localStorage.getItem("food_data"))
               ? JSON.parse(localStorage.getItem("food_data"))
                   .splice(
