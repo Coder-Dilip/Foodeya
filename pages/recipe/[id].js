@@ -64,7 +64,7 @@ const Id = () => {
               maxWidth: width < 760 ? "200px" : "300px",
               borderTopLeftRadius: "8px",
               borderTopRightRadius: "8px",
-              boxShadow: "0px 2px 9px 0px rgba(0,0.3,5.3,0.15)",
+              // boxShadow: "0px 2px 9px 0px rgba(0,0.3,5.3,0.15)",
             }}
           >
             <img
